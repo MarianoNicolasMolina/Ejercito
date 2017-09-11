@@ -3,7 +3,6 @@ package ejercito;
 public abstract class Unidad{
 	protected double pesoMax;
 	protected double volMax;
-	protected double distMax;
 	protected int cantArmas;
 	
 	public boolean armarse(Armamento armamento) {
