@@ -12,45 +12,47 @@ import ejercito.Niño;
 public class NiñoTest {
 	
 	private Niño jesus;
+	private Armamento arma;
 	
 	@Before
 	public void reclutarNiño() {
 		jesus = new Niño();
+		arma = new Armamento(50);
 	}
 	
 	@Test
 	public void cargaBien() {
 						
-		Assert.assertEquals(true, jesus.armarse(new Armamento(50,150)) );
+		Assert.assertEquals(true, jesus.armarse(arma));
 	}
 	
 	@Test
 	public void cargaDosVeces(){
 					
-		jesus.armarse(new Armamento(50,300));
+		jesus.armarse(arma);
 
-		Assert.assertEquals(true, jesus.armarse(new Armamento(70,300)));
+		Assert.assertEquals(true, jesus.armarse(new Armamento(70)));
 	}
 	
 	@Test
 	public void cargaTresVeces() {
 		
-		jesus.armarse(new Armamento(50,400));
-		jesus.armarse(new Armamento(50,400));
+		jesus.armarse(arma);
+		jesus.armarse(arma);
 		
-		Assert.assertEquals(false, jesus.armarse(new Armamento(50,400)));
+		Assert.assertEquals(false, jesus.armarse(arma));
 	}
 	
 	@Test
 	public void pesoDeMas() {
-		Assert.assertEquals(false, jesus.armarse(new Armamento(150,400)));
+		Assert.assertEquals(false, jesus.armarse(new Armamento(150)));
 	}
 	
 	@Test
 	public void excesoDePesoSegundaArma() {
-		jesus.armarse(new Armamento(50,400));
+		jesus.armarse(arma);
 		
-		Assert.assertEquals(false, jesus.armarse(new Armamento(75,400)));
+		Assert.assertEquals(false, jesus.armarse(new Armamento(75)));
 	}
 	
 
