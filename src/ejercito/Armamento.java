@@ -5,6 +5,10 @@ public class Armamento{
 	private double volumen;
 	private double distanciaObejtivo;
 	
+	public Armamento(double peso) {
+		this.peso = peso;
+	}
+	
 	public Armamento(double peso, double volumen) {
 		this.peso = peso;
 		this.volumen = volumen;
